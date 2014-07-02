@@ -1,3 +1,10 @@
 <li>
-  <%= link_to browser.name, browser %>
+  <span class="name">
+  	<%= browser.name %>
+  </span>
+  <% unless current_user?(browser.user) %>
+  	<span class="user">Created by <%= browser.user.name %></span>
+  <% end %>
+  <%= link_to 'info', info_browser_path(browser) %>
+  | <%= link_to 'view', '#' %>
 </li>

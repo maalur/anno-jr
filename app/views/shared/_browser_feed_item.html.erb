@@ -1,0 +1,15 @@
+<li id="<%= browser_feed_item.id %>">
+  <span class="name">
+    <%= browser_feed_item.name %>
+  </span>
+  <span class="links">
+  	<%= link_to 'info', info_browser_path(browser_feed_item) %>
+  	| <%= link_to 'view', '#' %>
+	  <% if current_user?(browser_feed_item.user) %>
+	    | <%= link_to 'edit', edit_browser_path(browser_feed_item) %>
+	    | <%= link_to "delete", browser_feed_item, method: :delete,
+	                                     data: { confirm: "You sure?" },
+	                                     title: browser_feed_item.name %>
+	  <% end %>
+  </span>
+</li>

@@ -5,6 +5,17 @@
       <h1>
         <%= @user.name %>
 			</h1>
+			<span><%= @user.title %></span>
+			<span><%= @user.about %></span>
     </section>
   </aside>
+  <div class="span8">
+    <% if @user.browsers.any? %>
+      <h3>Browsers</h3>
+      <ol class="browsers">
+        <%= render @browsers %>
+      </ol>
+      <%= will_paginate @browsers %>
+    <% end %>
+  </div>
 </div>
