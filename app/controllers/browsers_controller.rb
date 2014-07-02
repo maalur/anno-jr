@@ -24,9 +24,16 @@ class BrowsersController < ApplicationController
 	end
 
 	def edit
+		@browser = Browser.find(params[:id])
 	end
 
 	def update
+		if @browser.update_attributes(browser_params)
+      flash[:success] = "Browser updated"
+      redirect_to info_browser_path(@browser)
+    else
+      render 'edit'
+    end
 	end
 
 	def destroy
