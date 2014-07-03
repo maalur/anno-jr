@@ -3,4 +3,5 @@ class Browser < ActiveRecord::Base
 	default_scope -> { order('created_at DESC') }
 	validates :name, presence: true
 	validates :user_id, presence: true
+	self.per_page = 10
 end
