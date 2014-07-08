@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708154823) do
+ActiveRecord::Schema.define(version: 20140708200215) do
 
   create_table "browsers", force: true do |t|
     t.string   "name"
@@ -61,5 +61,16 @@ ActiveRecord::Schema.define(version: 20140708154823) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "views", force: true do |t|
+    t.integer  "linker_id"
+    t.integer  "linked_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "views", ["linked_id"], name: "index_views_on_linked_id"
+  add_index "views", ["linker_id", "linked_id"], name: "index_views_on_linker_id_and_linked_id", unique: true
+  add_index "views", ["linker_id"], name: "index_views_on_linker_id"
 
 end

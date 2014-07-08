@@ -1,2 +1,7 @@
 <h1><%= @browser.name %></h1>
 <h2>Created by <%= @browser.user.name %></h2>
+
+  <h3>Linked Tracks</h3>
+	<ul class="index">
+	  <%= render @browser.linked_tracks %>
+	</ul>
