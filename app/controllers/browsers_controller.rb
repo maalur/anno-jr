@@ -28,6 +28,7 @@ class BrowsersController < ApplicationController
 	end
 
 	def update
+		@browser = Browser.find(params[:id])
 		if @browser.update_attributes(browser_params)
       flash[:success] = "Browser updated"
       redirect_to info_browser_path(@browser)
