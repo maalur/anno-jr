@@ -1,0 +1,11 @@
+<li>
+  <span class="name">
+  	<%= track.name %>
+  </span>
+  <% unless current_user?(track.user) %>
+  	<span class="user">Created by <%= track.user.name %></span>
+  <% end %>
+	<span class="links">
+	  <%= link_to 'info', track %>
+	</span>
+</li>

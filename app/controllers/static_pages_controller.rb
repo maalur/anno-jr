@@ -2,7 +2,9 @@ class StaticPagesController < ApplicationController
   def home
     if signed_in?
       @browser = current_user.browsers.build
-      @feed_items = current_user.browser_feed.paginate(page: params[:page])
+      @browser_items = current_user.browser_feed
+      @track = current_user.tracks.build
+      @track_items = current_user.track_feed
     end
   end
 

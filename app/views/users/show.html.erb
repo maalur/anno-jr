@@ -1,21 +1,26 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= @user.name %>
-			</h1>
-			<span><%= @user.title %></span>
-			<span><%= @user.about %></span>
-    </section>
-  </aside>
-  <div class="span8">
+  <section>
+    <h1>
+      <%= @user.name %>
+		</h1>
+		<p><%= @user.title %></p>
+		<span><%= @user.about %></span>
+  </section>
+  <aside class="span6">
     <% if @user.browsers.any? %>
-      <h3>Browsers</h3>
+      <h3>Browsers (<%= @user.browsers.count %>)</h3>
       <ol class="browsers">
         <%= render @browsers %>
       </ol>
-      <%= will_paginate @browsers %>
     <% end %>
-  </div>
+  </aside>
+  <aside class="span6">
+    <% if @user.tracks.any? %>
+      <h3>Tracks (<%= @user.tracks.count %>)</h3>
+      <ol class="tracks">
+        <%= render @tracks %>
+      </ol>
+    <% end %>
+  </aside>
 </div>

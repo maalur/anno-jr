@@ -1,0 +1,7 @@
+<%= form_for(@track) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :name, placeholder: "track name" %>
+  </div>
+  <%= f.submit "Create a new track", class: "btn btn-large btn-primary" %>
+<% end %>

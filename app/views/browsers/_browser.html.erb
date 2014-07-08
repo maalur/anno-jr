@@ -5,6 +5,8 @@
   <% unless current_user?(browser.user) %>
   	<span class="user">Created by <%= browser.user.name %></span>
   <% end %>
-  <%= link_to 'info', info_browser_path(browser) %>
-  | <%= link_to 'view', '#' %>
+	<span class="links">
+	  <%= link_to 'info', info_browser_path(browser) %>
+	  | <%= link_to 'view', '#' %>
+	</span>
 </li>

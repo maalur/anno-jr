@@ -40,6 +40,27 @@ span {
   margin-bottom: 3px;
 }
 
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -131,6 +152,7 @@ aside {
     &:first-child {
       border: 0;
       padding-top: 0;
+      margin-bottom: 25px;
     }
     h1 {
       font-size: 1.4em;
@@ -173,6 +195,9 @@ input {
 .index {
   list-style: none;
   margin: 0;
+  span {
+    display: inline-block;
+  }
   li {
     overflow: auto;
     padding: 10px 0;
@@ -183,19 +208,31 @@ input {
   }
 }
 
-/* browsers */
+/* browsers and tracks */
 
-.browsers {
+.browsers, .tracks {
   list-style: none;
   margin: 10px 0 0 0;
+  overflow: scroll;
+  max-height: 400px;
 
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
+
+  span {
+    display: inline-block;
+  }
+}
+
+.links {
+  float: right;
+  padding-right: 15px;
 }
 .name {
   font-weight: bold;
+  padding-left: 15px;
 }
 .user {
   color: $grayLight;
@@ -205,4 +242,10 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+/* feeds */
+.feed {
+  max-height: 500px;
+  margin-bottom: 25px;
 }

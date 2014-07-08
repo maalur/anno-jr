@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702021808) do
+ActiveRecord::Schema.define(version: 20140708154823) do
 
   create_table "browsers", force: true do |t|
     t.string   "name"
@@ -21,6 +21,29 @@ ActiveRecord::Schema.define(version: 20140702021808) do
   end
 
   add_index "browsers", ["user_id", "created_at"], name: "index_browsers_on_user_id_and_created_at"
+
+  create_table "tracks", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "type"
+    t.string   "path"
+    t.string   "data"
+    t.string   "iconCls"
+    t.string   "curator_name"
+    t.string   "curator_email"
+    t.string   "inst_name"
+    t.string   "inst_url"
+    t.string   "inst_logo"
+    t.string   "synd_title"
+    t.string   "synd_copyright"
+    t.string   "synd_license"
+    t.date     "synd_version"
+    t.string   "synd_details"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tracks", ["user_id", "created_at"], name: "index_tracks_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "name"

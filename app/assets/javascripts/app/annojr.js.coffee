@@ -1,1 +1,0 @@
-annojr.js.coffee

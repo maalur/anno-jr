@@ -7,6 +7,7 @@ AnnoJr::Application.routes.draw do
       get 'info'
     end
   end
+  resources :tracks
 
   root 'static_pages#home'
 

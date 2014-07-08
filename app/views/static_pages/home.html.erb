@@ -1,17 +1,16 @@
 <% if signed_in? %>
-  <div class="row">
-    <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%= render 'shared/browser_form' %>
-      </section>
-    </aside>
-    <div class="span8">
-      <h3>My Browsers (<%= @feed_items.count %>)</h3>
+  <div class="row clearfix">
+    <%= render 'shared/user_info' %>
+    <aside class="span6 feed">
+      <h3>My Browsers (<%= @browser_items.count %>)</h3>
+      <%= render 'shared/browser_form' %>
       <%= render 'shared/browser_feed' %>
-    </div>
+    </aside>
+    <aside class="span6 feed">
+      <h3>My Tracks (<%= @track_items.count %>)</h3>
+      <%= render 'shared/track_form' %>
+      <%= render 'shared/track_feed' %>
+    </aside>
   </div>
 <% else %>
 	<div class="center hero-unit">
