@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@track) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :track_type %>
+      <%= f.select :track_type, ['MaskTrack', 'MethTrack', 'MicroarrayTrack', 'ModelsTrack', 'PairedEndTrack', 'ReadsTrack', 'SmallReadsTrack' ] %>
+
+      <%= f.label :path %>
+      <%= f.select :path, ['Annotation Models', 'DNA Methylation', 'Homologous Regions', 'Messenger RNA', 'Reads', 'Small RNA' ] %>
+
+      <%= f.label :data %>
+      <%= f.text_field :data, placeholder: "http://some.remote.site/fetcher.php" %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

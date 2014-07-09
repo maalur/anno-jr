@@ -1,7 +1,0 @@
-<%= form_for(@browser) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_field :name, placeholder: "browser name" %>
-  </div>
-  <%= f.submit "Create a new browser", class: "btn btn-large btn-primary" %>
-<% end %>

@@ -3,12 +3,12 @@
     <%= render 'shared/user_info' %>
     <aside class="span6 feed">
       <h3>My Browsers (<%= @browser_items.count %>)</h3>
-      <%= render 'shared/browser_form' %>
+      <%= link_to "Create a new browser!", new_browser_path, class: "btn btn-large btn-primary" %>
       <%= render 'shared/browser_feed' %>
     </aside>
     <aside class="span6 feed">
       <h3>My Tracks (<%= @track_items.count %>)</h3>
-      <%= render 'shared/track_form' %>
+      <%= link_to "Create a new track!", new_track_path, class: "btn btn-large btn-primary" %>
       <%= render 'shared/track_feed' %>
     </aside>
   </div>

@@ -7,6 +7,7 @@ class TracksController < ApplicationController
 	end
 
 	def new
+		@track = Track.new
 	end
 
 	def create
@@ -52,7 +53,7 @@ class TracksController < ApplicationController
 	private
 
 		def track_params
-			params.require(:track).permit(:name)
+			params.require(:track).permit([:name, :track_type, :path, :data])
 		end
 
 		def correct_user

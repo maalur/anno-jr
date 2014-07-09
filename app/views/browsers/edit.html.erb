@@ -4,14 +4,7 @@
 <div class="row clearfix">
   <aside class="span6">
   	<h3>Info</h3>
-    <%= form_for(@browser) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
+    <%= render 'browser_form' %>
   </aside>
   <aside class="span6">
   	<h3>Tracks</h3>
@@ -20,6 +13,8 @@
   		<ol class="tracks">
   			<%= render partial: 'browsers/track', collection: @linked_tracks %>
   		</ol>
+  	<% else %>
+  	  <h4>No tracks have been added!</h4>
   	<% end %>
   	<% if @unlinked_tracks.any? %>
   		<h4>Add Tracks</h4>

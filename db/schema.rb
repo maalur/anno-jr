@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708200215) do
+ActiveRecord::Schema.define(version: 20140709072622) do
 
   create_table "browsers", force: true do |t|
     t.string   "name"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140708200215) do
   create_table "tracks", force: true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.string   "type"
+    t.string   "track_type"
     t.string   "path"
     t.string   "data"
     t.string   "iconCls"

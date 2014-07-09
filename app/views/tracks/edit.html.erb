@@ -1,15 +1,4 @@
 <% provide(:title, "Edit track") %>
 <h1>Edit your track</h1>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@track) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'track_form' %>

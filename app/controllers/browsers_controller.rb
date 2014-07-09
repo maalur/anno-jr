@@ -7,6 +7,7 @@ class BrowsersController < ApplicationController
 	end
 
 	def new
+		@browser = Browser.new
 	end
 
 	def create
