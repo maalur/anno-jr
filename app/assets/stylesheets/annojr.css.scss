@@ -229,6 +229,9 @@ input {
 .links {
   float: right;
   padding-right: 15px;
+  form {
+    margin-bottom: 0;
+  }
 }
 .name {
   font-weight: bold;

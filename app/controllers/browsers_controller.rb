@@ -15,9 +15,9 @@ class BrowsersController < ApplicationController
       flash[:success] = "New browser created!"
       redirect_to root_url
     else
-      @browser_items = current_user.browser_feed.paginate(page: params[:page])
+      @browser_items = current_user.browser_feed
       @track = current_user.tracks.build
-      @track_items = current_user.track_feed.paginate(page: params[:page])
+      @track_items = current_user.track_feed
       render 'static_pages/home'
     end
 	end
@@ -27,6 +27,8 @@ class BrowsersController < ApplicationController
 
 	def edit
 		@browser = Browser.find(params[:id])
+		@linked_tracks = @browser.linked_tracks.to_a
+		@unlinked_tracks = current_user.tracks.to_a - @linked_tracks
 	end
 
 	def update

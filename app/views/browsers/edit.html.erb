@@ -2,7 +2,8 @@
 <h1>Edit your browser</h1>
 
 <div class="row">
-  <div class="span6 offset3">
+  <aside class="span6">
+  	<h3>Info</h3>
     <%= form_for(@browser) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
@@ -11,5 +12,20 @@
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
-  </div>
+  </aside>
+  <aside class="span6 feed">
+  	<h3>Tracks</h3>
+  	<% if @linked_tracks.any? %>
+  		<h4>Linked Tracks</h4>
+  		<ol class="tracks">
+  			<%= render partial: 'browsers/track', collection: @linked_tracks %>
+  		</ol>
+  	<% end %>
+  	<% if @unlinked_tracks.any? %>
+  		<h4>Unlinked Tracks</h4>
+  		<ol class="tracks">
+  			<%= render partial: 'browsers/track', collection: @unlinked_tracks %>
+  		</ol>
+  	<% end %>
+  </aside>
 </div>

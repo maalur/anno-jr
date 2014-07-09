@@ -16,8 +16,8 @@ class TracksController < ApplicationController
       redirect_to root_url
     else
     	@browser = current_user.browsers.build
-      @browser_items = current_user.browser_feed.paginate(page: params[:page])
-      @track_items = current_user.track_feed.paginate(page: params[:page])
+      @browser_items = current_user.browser_feed
+      @track_items = current_user.track_feed
       render 'static_pages/home'
     end
 	end

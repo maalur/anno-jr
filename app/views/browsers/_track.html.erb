@@ -1,0 +1,24 @@
+<li id="<%= track.id %>">
+  <span class="name">
+    <%= track.name %>
+  </span>
+  <span class="links">
+  	<div id="link_form">
+		  <div id="linker_form">
+			  <% if @browser.linked?(track) %>
+			    <%= form_for(@browser.views.find_by(linked_id: track.id),
+					             html: { method: :delete }) do |f| %>
+					  <div><%= hidden_field_tag 'browser_id', @browser.id %></div>
+					  <%= f.submit "Unlink", class: "btn btn-small" %>
+					<% end %>
+			  <% else %>
+			    <%= form_for(@browser.views.build(linked_id: track.id)) do |f| %>
+			    	<div><%= hidden_field_tag 'browser_id', @browser.id %></div>
+					  <div><%= f.hidden_field :linked_id %></div>
+					  <%= f.submit "Link", class: "btn btn-small btn-primary" %>
+					<% end %>
+			  <% end %>
+			</div>
+		</div>
+  </span>
+</li>

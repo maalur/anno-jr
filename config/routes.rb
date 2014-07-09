@@ -8,6 +8,7 @@ AnnoJr::Application.routes.draw do
     end
   end
   resources :tracks
+  resources :views, only: [:create, :destroy]
 
   root 'static_pages#home'
 
