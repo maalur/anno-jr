@@ -2,14 +2,14 @@
   <div class="row clearfix">
     <%= render 'shared/user_info' %>
     <aside class="span6 feed">
+      <%= link_to "Create a new browser!", new_browser_path, class: "btn btn-primary links" %>
       <h3>My Browsers (<%= @browser_items.count %>)</h3>
-      <%= link_to "Create a new browser!", new_browser_path, class: "btn btn-large btn-primary" %>
-      <%= render 'shared/browser_feed' %>
+      <%= render 'shared/feed', object: @browser_items %>
     </aside>
     <aside class="span6 feed">
+      <%= link_to "Create a new track!", new_track_path, class: "btn btn-primary links" %>
       <h3>My Tracks (<%= @track_items.count %>)</h3>
-      <%= link_to "Create a new track!", new_track_path, class: "btn btn-large btn-primary" %>
-      <%= render 'shared/track_feed' %>
+      <%= render 'shared/feed', object: @track_items %>
     </aside>
   </div>
 <% else %>

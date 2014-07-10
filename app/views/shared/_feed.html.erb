@@ -1,0 +1,5 @@
+<% if object.any? %>
+  <ol class="feedItems">
+    <%= render partial: "shared/#{object.first.class.to_s.downcase}_feed_item", collection: object %>
+  </ol>
+<% end %>

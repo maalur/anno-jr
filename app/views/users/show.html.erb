@@ -7,18 +7,18 @@
 		<p><%= @user.title %></p>
 		<span><%= @user.about %></span>
   </section>
-  <aside class="span6">
+  <aside class="span6 feed">
     <% if @user.browsers.any? %>
       <h3>Browsers (<%= @user.browsers.count %>)</h3>
-      <ol class="browsers">
+      <ol class="feedItems">
         <%= render @browsers %>
       </ol>
     <% end %>
   </aside>
-  <aside class="span6">
+  <aside class="span6 feed">
     <% if @user.tracks.any? %>
       <h3>Tracks (<%= @user.tracks.count %>)</h3>
-      <ol class="tracks">
+      <ol class="feedItems">
         <%= render @tracks %>
       </ol>
     <% end %>

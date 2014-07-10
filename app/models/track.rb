@@ -7,5 +7,8 @@ class Track < ActiveRecord::Base
 	default_scope -> { order('created_at DESC') }
 	validates :name, presence: true
 	validates :user_id, presence: true
+	validates :track_type, presence: true
+	validates :path, presence: true
+	validates :data, presence: true
 	self.per_page = 10
 end

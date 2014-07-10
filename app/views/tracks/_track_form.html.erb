@@ -12,7 +12,8 @@
       <%= f.label :path %>
       <%= f.select :path, ['Annotation Models', 'DNA Methylation', 'Homologous Regions', 'Messenger RNA', 'Reads', 'Small RNA' ] %>
 
-      <%= f.label :data %>
+      <%= f.label :data, 'Fetcher location' %>
+      <span>(or planned location of fetcher)</span>
       <%= f.text_field :data, placeholder: "http://some.remote.site/fetcher.php" %>
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>

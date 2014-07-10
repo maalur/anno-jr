@@ -13,8 +13,8 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-    @browsers = @user.browsers.paginate(page: params[:page])
-    @tracks = @user.tracks.paginate(page: params[:page])
+    @browsers = @user.browsers
+    @tracks = @user.tracks
   end
 
   def create

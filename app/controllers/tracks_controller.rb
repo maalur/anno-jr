@@ -14,12 +14,9 @@ class TracksController < ApplicationController
 		@track = current_user.tracks.build(track_params)
     if @track.save
       flash[:success] = "New track created!"
-      redirect_to root_url
+      redirect_to @track
     else
-    	@browser = current_user.browsers.build
-      @browser_items = current_user.browser_feed
-      @track_items = current_user.track_feed
-      render 'static_pages/home'
+      render 'new'
     end
 	end
 
