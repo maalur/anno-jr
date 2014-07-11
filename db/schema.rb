@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709072622) do
+ActiveRecord::Schema.define(version: 20140711072853) do
 
   create_table "browsers", force: true do |t|
     t.string   "name"
@@ -28,17 +28,6 @@ ActiveRecord::Schema.define(version: 20140709072622) do
     t.string   "track_type"
     t.string   "path"
     t.string   "data"
-    t.string   "iconCls"
-    t.string   "curator_name"
-    t.string   "curator_email"
-    t.string   "inst_name"
-    t.string   "inst_url"
-    t.string   "inst_logo"
-    t.string   "synd_title"
-    t.string   "synd_copyright"
-    t.string   "synd_license"
-    t.date     "synd_version"
-    t.string   "synd_details"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

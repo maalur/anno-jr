@@ -40,6 +40,7 @@ class TracksController < ApplicationController
 
 	def destroy
 		@track.destroy
+		flash[:success] = "Track deleted."
     redirect_to root_url
 	end
 

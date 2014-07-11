@@ -41,6 +41,7 @@ class BrowsersController < ApplicationController
 
 	def destroy
 		@browser.destroy
+		flash[:success] = "Browser deleted."
     redirect_to root_url
 	end
 
