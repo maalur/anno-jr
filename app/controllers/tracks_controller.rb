@@ -62,20 +62,27 @@ class TracksController < ApplicationController
 
 		def get_json(track)
 			colors = {"CG"=>"red", "CHG"=>"blue", "CHH"=>"green"}
-			content = open("#{track.data}?action=range&assembly=1&left=700000&right=799999&bases=10&pixels=1").read
-			data_hash = JSON[content]
 			range = []
-			bar_data = {"range"=>[0,0], "data"=>{"top"=>[], "bottom"=>[]}}
+			bar_data = {"success"=>false,"range"=>[0,0], "data"=>{"top"=>[], "bottom"=>[]}}
 
-			data_hash['data'].each do |mc|
-				mc[1].each do |set|
-					range << set[0]
-					bar_data["data"]["top"] <<  {"position"=>set[0],"value"=>set[2], "color"=>colors[mc[0]]} if set[2] > 0
-					bar_data["data"]["bottom"] <<  {"position"=>set[0],"value"=>set[3], "color"=>colors[mc[0]]} if set[3] > 0
+			begin
+				content = open("#{track.data}?action=range&assembly=1&left=700000&right=799999&bases=10&pixels=1").read
+				data_hash = JSON[content]
+				bar_data["success"] = data_hash["success"]
+
+				data_hash['data'].each do |mc|
+					mc[1].each do |set|
+						range << set[0]
+						bar_data["data"]["top"] <<  {"position"=>set[0],"value"=>set[2], "color"=>colors[mc[0]]} if set[2] > 0
+						bar_data["data"]["bottom"] <<  {"position"=>set[0],"value"=>set[3], "color"=>colors[mc[0]]} if set[3] > 0
+					end
 				end
+
+				bar_data["range"] = range.minmax
+			rescue OpenURI::HTTPError => ex
+				bar_data["success"] = false
 			end
 
-			bar_data["range"] = range.minmax
 			bar_data.to_json
 		end
 end

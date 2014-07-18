@@ -4,12 +4,18 @@
 <h1><%= @track.name %></h1>
 <h2>Created by <%= @track.user.name %></h2>
 <div class="track">
+	<p class="success"></p>
 </div>
 
 
 
 <script>
   var trackData = <%= raw(@json) %>;
+  if (trackData.success === true) {
+    $('.success').text("Congratuations, your track is connected propperly! Check out the preview below.");
+  } else {
+    $('.success').text("It looks like something went wrong. Make sure your fetcher link is correct.");
+  }
 
   var h = 100,
   		w = 940;
