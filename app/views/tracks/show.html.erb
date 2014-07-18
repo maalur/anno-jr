@@ -1,2 +1,65 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "http://d3js.org/d3.v3.min.js" %>
+<% end %>
 <h1><%= @track.name %></h1>
 <h2>Created by <%= @track.user.name %></h2>
+<div class="track">
+</div>
+
+
+
+<script>
+  var trackData = <%= raw(@json) %>;
+
+  var h = 100,
+  		w = 940;
+
+  var chart1 = d3.selectAll('.track')
+  							.append('svg')
+  							.attr('width', w)
+  							.attr('height', h);
+  var chart2 = d3.selectAll('.track')
+  							.append('svg')
+  							.attr('width', w)
+  							.attr('height', h);
+
+  var barwidth = 1;
+  var spacing = 0;
+  var x_stretch = (trackData.range[1] - trackData.range[0] + 1) / (940 - 1)
+
+  chart1.selectAll('rect')
+  			.data(trackData.data.top)
+  			.enter()
+  			.append('rect')
+  			.attr('x', function(d, i) {
+  				return (d.position - trackData.range[0]) / x_stretch;
+  			})
+  			.attr('y', function(d) {
+  				return h - d.value;
+  			})
+  			.attr('width', barwidth - spacing)
+  			.attr('height', function(d) {
+  				return d.value;
+  			})
+  			.attr('fill', function(d) {
+  				return d.color;
+  			});
+
+  chart2.selectAll('rect')
+  			.data(trackData.data.bottom)
+  			.enter()
+  			.append('rect')
+  			.attr('x', function(d, i) {
+  				return (d.position - trackData.range[0]) / x_stretch;
+  			})
+  			.attr('y', function(d) {
+  				return d.value - h;
+  			})
+  			.attr('width', barwidth - spacing)
+  			.attr('height', function(d) {
+  				return d.value;
+  			})
+  			.attr('fill', function(d) {
+  				return d.color;
+  			});
+</script>

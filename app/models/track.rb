@@ -11,4 +11,5 @@ class Track < ActiveRecord::Base
 	validates :path, presence: true
 	validates :data, presence: true
 	self.per_page = 10
+
 end
