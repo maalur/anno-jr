@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+	include TracksHelper
 	before_action :signed_in_user, except: [:index, :info]
 	before_action :correct_user,   only: :destroy
 
@@ -22,7 +23,10 @@ class TracksController < ApplicationController
 
 	def show
 		@track = Track.find(params[:id])
-		@json = get_json(@track)
+		respond_to do |format|
+			format.html { @json = get_json(@track) }
+			format.json { render json: @track.annoj_data(params) }  #direct url to /{id}.json?annoj[]...
+		end
 	end
 
 	def edit
@@ -45,10 +49,6 @@ class TracksController < ApplicationController
     redirect_to root_url
 	end
 
-	def info
-		@track = Track.find(params[:id])
-	end
-
 	private
 
 		def track_params
@@ -59,30 +59,4 @@ class TracksController < ApplicationController
       @track = current_user.tracks.find_by(id: params[:id])
       redirect_to root_url if @track.nil?
     end
-
-		def get_json(track)
-			colors = {"CG"=>"red", "CHG"=>"blue", "CHH"=>"green"}
-			range = []
-			bar_data = {"success"=>false,"range"=>[0,0], "data"=>{"top"=>[], "bottom"=>[]}}
-
-			begin
-				content = open("#{track.data}?action=range&assembly=1&left=700000&right=799999&bases=10&pixels=1").read
-				data_hash = JSON[content]
-				bar_data["success"] = data_hash["success"]
-
-				data_hash['data'].each do |mc|
-					mc[1].each do |set|
-						range << set[0]
-						bar_data["data"]["top"] <<  {"position"=>set[0],"value"=>set[2], "color"=>colors[mc[0]]} if set[2] > 0
-						bar_data["data"]["bottom"] <<  {"position"=>set[0],"value"=>set[3], "color"=>colors[mc[0]]} if set[3] > 0
-					end
-				end
-
-				bar_data["range"] = range.minmax
-			rescue OpenURI::HTTPError => ex
-				bar_data["success"] = false
-			end
-
-			bar_data.to_json
-		end
 end
