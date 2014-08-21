@@ -204,7 +204,7 @@ var BaseJS = (function() {
 		request({
 			url: params.url || '',
 			data: {
-				action: 'syndicate'
+				action1: 'syndicate'
 			},
 			requestJSON: false,
 			receiveJSON: true,
@@ -2241,7 +2241,7 @@ AnnoJ.InfoBox = function() {
 Ext.extend(AnnoJ.InfoBox, Ext.Panel);
 AnnoJ.AboutBox = (function() {
 	var info = {
-		logo: "<a href='http://www.annoj.org'><img src='/aj2/img/Anno-J.jpg' alt='Anno-J logo' /></a>",
+		logo: "<a href='http://www.annoj.org'><img src='http://neomorph.salk.edu/aj2/img/Anno-J.jpg' alt='Anno-J logo' /></a>",
 		//version: 'Beta 1.5',
 		version: 'Beta 2.5',
 		engineer: 'Julian Tonti-Filippini (2007-2009),<br>Tao Wang (2010-2012),<br>Huaming Chen (2013)',
@@ -6505,10 +6505,10 @@ AnnoJ.BrowserTrack = function(userConfig) {
  
 			BaseJS.request({
 				url: request_url,
-				method: 'POST',
+				method: 'GET',
 				requestJSON: false,
 				data: {
-					action: 'range',
+					action1: 'range',
 					assembly: views.loading.assembly,
 					left: pos.left,
 					right: pos.right,

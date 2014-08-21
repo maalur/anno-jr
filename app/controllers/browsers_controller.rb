@@ -21,6 +21,11 @@ class BrowsersController < ApplicationController
 	end
 
 	def show
+		@browser = Browser.find(params[:id])
+		respond_to do |format|
+			format.html { render layout: false }
+			format.json { render json: @browser.generate_config(@browser.linked_tracks)}
+		end
 	end
 
 	def edit
@@ -49,10 +54,17 @@ class BrowsersController < ApplicationController
 		@browser = Browser.find(params[:id])
 	end
 
+	def genome
+		@browser = Browser.find(params[:id])
+		respond_to do |format|
+			format.json { render json: annoj_data(@browser.genome, params)}
+		end
+	end
+
 	private
 
 		def browser_params
-			params.require(:browser).permit(:name)
+			params.require(:browser).permit(:name, :genome)
 		end
 
 		def correct_user

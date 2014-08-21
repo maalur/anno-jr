@@ -9,7 +9,7 @@
   <aside class="span6">
   	<h3>Tracks</h3>
   	<% if @linked_tracks.any? %>
-  		<h4>Remove Tracks</h4>
+  		<h4>Linked Tracks</h4>
   		<ol class="tracks">
   			<%= render partial: 'browsers/track', collection: @linked_tracks %>
   		</ol>

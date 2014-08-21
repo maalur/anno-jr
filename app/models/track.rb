@@ -11,11 +11,4 @@ class Track < ActiveRecord::Base
 	validates :path, presence: true
 	validates :data, presence: true
 	self.per_page = 10
-
-  def annoj_data(params)
-  	annoj_params = params.select { |k,v| !['id', 'action', 'controller', 'format'].include?(k) }
-  	annoj_params['action'] = params['annoj'] ? params['annoj'][0]['action'] : nil
-		open(self.data + "?" + URI.encode_www_form(annoj_params)).read
-	end
-
 end

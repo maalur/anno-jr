@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+  <title>Browser</title>
+  <!-- ExtJS Dependencies -->
+	<link type='text/css' rel='stylesheet' href='http://neomorph.salk.edu/aj2/css/ext-all.css' />
+	<%= javascript_include_tag 'annoj/ext-base-3.2.js', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'annoj/ext-all-3.2.js', 'data-turbolinks-track' => true %>
+	<!-- Anno-J -->
+	<link type='text/css' rel='stylesheet' href='http://neomorph.salk.edu/aj2/css/viewport.css' />
+	<link type='text/css' rel='stylesheet' href='http://neomorph.salk.edu/aj2/css/plugins.css' />
+	<link type='text/css' rel='stylesheet' href='http://neomorph.salk.edu/aj2/css/salk.css' />
+	<%= javascript_include_tag 'annoj/excanvas.js', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'annoj/annoj.js', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<script>
+  AnnoJ.config = <%= raw(@browser.generate_config(@browser.linked_tracks).to_json) %>
+</script>
+
+
+</body>
+</html>

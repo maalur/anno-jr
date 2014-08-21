@@ -5,12 +5,15 @@ AnnoJr::Application.routes.draw do
   resources :browsers do
     member do
       get 'info'
+      get 'genome'
     end
   end
-  resources :tracks
+  resources :tracks, except: :show
   resources :views, only: [:create, :destroy]
 
   root 'static_pages#home'
+
+  match '/tracks/:id', to: "tracks#show", via: [:get, :post]
 
   match '/about', to: "static_pages#about", via: 'get'
   match '/contact', to: "static_pages#contact", via: 'get'

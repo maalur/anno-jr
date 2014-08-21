@@ -25,7 +25,7 @@ class TracksController < ApplicationController
 		@track = Track.find(params[:id])
 		respond_to do |format|
 			format.html { @json = get_json(@track) }
-			format.json { render json: @track.annoj_data(params) }  #direct url to /{id}.json?annoj[]...
+			format.json { render json: annoj_data(@track.data, params) }
 		end
 	end
 
