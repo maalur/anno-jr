@@ -20,7 +20,7 @@ AnnoJr::Application.routes.draw do
   match '/help', to: "static_pages#help", via: 'get'
   match '/demo', to: "static_pages#demo", via: 'get'
 
-  match '/signup', to: "users#new", via: 'get'
+  #match '/signup', to: "users#new", via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   
