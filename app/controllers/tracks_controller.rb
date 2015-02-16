@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
 	include TracksHelper
-	before_action :signed_in_user, except: [:index, :info]
+	before_action :signed_in_user, except: [:index, :info, :show]
 	before_action :correct_user,   only: :destroy
 
 	def index

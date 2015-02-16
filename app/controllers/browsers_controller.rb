@@ -1,5 +1,5 @@
 class BrowsersController < ApplicationController
-	before_action :signed_in_user, except: [:index, :info, :show]
+	before_action :signed_in_user, except: [:index, :info, :show, :genome]
 	before_action :correct_user,   only: :destroy
 
 	def index
@@ -24,7 +24,6 @@ class BrowsersController < ApplicationController
 		@browser = Browser.find(params[:id])
 		respond_to do |format|
 			format.html { render layout: false }
-			format.json { render json: @browser.generate_config(@browser.linked_tracks)}
 		end
 	end
 
