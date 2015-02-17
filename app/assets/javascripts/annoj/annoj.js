@@ -1725,7 +1725,7 @@ AnnoJ.Navigator = function() {
 	var savehandler = function(slot){
 		var loc = AnnoJ.getLocation();
 		AnnoJ.config.location.position = loc.position;
-		var gurl = '/proxy/http://tabit.ucsd.edu/fetchers/save.php';
+		var gurl = '';
 			BaseJS.request({
 				url: gurl,
 				method: 'POST',
@@ -1753,7 +1753,7 @@ AnnoJ.Navigator = function() {
 		return
 	};
 	var snapshot =  function(action, slot){
-		var gurl = '/proxy/http://tabit.ucsd.edu/fetchers/save.php';
+		var gurl = '';
 		BaseJS.request({
 			url: gurl,
 			method: 'POST',
@@ -2241,7 +2241,7 @@ AnnoJ.InfoBox = function() {
 Ext.extend(AnnoJ.InfoBox, Ext.Panel);
 AnnoJ.AboutBox = (function() {
 	var info = {
-		logo: "<a href='http://www.annoj.org'><img src='http://neomorph.salk.edu/aj2/img/Anno-J.jpg' alt='Anno-J logo' /></a>",
+		logo: "<a href='http://www.annoj.org'><img src='../aj2/img/Anno-J.jpg' alt='Anno-J logo' /></a>",
 		//version: 'Beta 1.5',
 		version: 'Beta 2.5',
 		engineer: 'Julian Tonti-Filippini (2007-2009),<br>Tao Wang (2010-2012),<br>Huaming Chen (2013)',
@@ -2252,7 +2252,7 @@ AnnoJ.AboutBox = (function() {
 		tutorial: "<a target='new' href='http://neomorph.salk.edu/index.html'>SALK example</a>",
 		//website: "",
 		//tutorial: "",
-		license: "<a target='new' rel='license' href='http://creativecommons.org/licenses/by-nc-sa/3.0/'><img alt='Creative Commons License' style='border-width:0' src='http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png' /></a>"
+		license: "<a target='new' rel='license' href='http://creativecommons.org/licenses/by-nc-sa/3.0/'><img alt='Creative Commons License' style='border-width:0' src='../aj2/img/creative_commons.png' /></a>"
 	};
 	var body = new Ext.Element(document.createElement('DIV'));
 	var html = "<div style='padding-bottom:10px;'>" + info.logo + "</div>" + "<table style='font-size:10px';>" + "<tr><td><div><b>Version: </b></td><td>" + info.version + "</div></td></tr>" + "<tr><td valign=top><div><b>Engineer: </b></td><td>" + info.engineer + "</div></td></tr>" + "<tr><td><div><b>Contact: </b></td><td>" + info.contact + "</div></td></tr>" + "<tr><td valign=top><div><b>Copyright: </b></td><td>" + info.copyright + "</div></td></tr>" + "<tr><td><div><b>Website: </b></td><td>" + info.website + "</div></td></tr>" + "<tr><td><div><b>License: </b></td><td>" + info.license + "</div></td></tr>" + "<tr><td><div><b>Tutorial: </b></td><td>" + info.tutorial + "</div></td></tr>" + "</table><br><br>";
