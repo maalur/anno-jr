@@ -10,8 +10,8 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require ./annoj/annoj.js
 //= require ./annoj/ext-base-3.2.js
 //= require ./annoj/ext-all-3.2.js
 //= require ./annoj/excanvas.js
-//= require ./annoj/annoj.js
 //
