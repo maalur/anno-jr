@@ -8,8 +8,8 @@
 }
 
 .container { position:absolute; height:8px; cursor:pointer; border-collapse:collapse; }
-.container .arrow_right { background: url('../images/sprites_small_models.png') 0px -112px; height:8px; width:5px; }
-.container .arrow_left  { background: url('../images/sprites_small_models.png') 0px -122px; height:8px; width:5px; }
+.container .arrow_right { background: url('/images/sprites_small_models.png') 0px -112px; height:8px; width:5px; }
+.container .arrow_left  { background: url('/images/sprites_small_models.png') 0px -122px; height:8px; width:5px; }
 .container .title {	font-family:arial, verdana, helvetica; font-size:10px; height:10px; padding:0px 4px;}
 .container .body { height:8px; }
 .container .body .model { height:8px; position:relative; }
@@ -20,40 +20,40 @@
 	padding-right : 2px;
 	font-family : arial,helvetica,monospace;
 }
-.arrowLeft  { background: url('../images/models/left.gif');  }
-.arrowRight { background: url('../images/models/right.gif'); }
+.arrowLeft  { background: url('/images/models/left.gif');  }
+.arrowRight { background: url('/images/models/right.gif'); }
 
-.mRNA,.rna_m            { background: url('../images/models/bar.gif') repeat-x; }
-.five_prime_UTR,.utr_5  { background: url('../images/models/red.gif') repeat-x; }
-.three_prime_UTR,.utr_3 { background: url('../images/models/red.gif') repeat-x; }
-.CDS,.cds,.exon             { background: url('../images/models/green.gif') repeat-x; }
+.mRNA,.rna_m            { background: url('/images/models/bar.gif') repeat-x; }
+.five_prime_UTR,.utr_5  { background: url('/images/models/red.gif') repeat-x; }
+.three_prime_UTR,.utr_3 { background: url('/images/models/red.gif') repeat-x; }
+.CDS,.cds,.exon             { background: url('/images/models/green.gif') repeat-x; }
 
-.ncRNA,.rna_nc  { background: url('../images/models/bar.gif') repeat-x; }
-.tRNA,.rna_t   { background: url('../images/models/bar.gif') repeat-x; }
-.snoRNA,.rna_sno { background: url('../images/models/bar.gif') repeat-x; }
-.miRNA,.rna_mi  { background: url('../images/models/bar.gif') repeat-x; }
-.snRNA,.rna_sn  { background: url('../images/models/bar.gif') repeat-x; }
-.rRNA,.rna_r   { background: url('../images/models/bar.gif') repeat-x; }
+.ncRNA,.rna_nc  { background: url('/images/models/bar.gif') repeat-x; }
+.tRNA,.rna_t   { background: url('/images/models/bar.gif') repeat-x; }
+.snoRNA,.rna_sno { background: url('/images/models/bar.gif') repeat-x; }
+.miRNA,.rna_mi  { background: url('/images/models/bar.gif') repeat-x; }
+.snRNA,.rna_sn  { background: url('/images/models/bar.gif') repeat-x; }
+.rRNA,.rna_r   { background: url('/images/models/bar.gif') repeat-x; }
 
-.pseudogenic_exon       { background: url('../images/models/grey.gif') repeat-x; }
-.pseudogenic_transcript { background: url('../images/models/bar.gif') repeat-x;  }
+.pseudogenic_exon       { background: url('/images/models/grey.gif') repeat-x; }
+.pseudogenic_transcript { background: url('/images/models/bar.gif') repeat-x;  }
 
 .line_above {background-color:rgb(144,100,100);}
 .line_below {background-color:rgb(100,144,100);}
 
-#repeats .cds, .mule { background: url('../images/models/orange.gif') repeat-x; }
-#repeats .mRNA, .tr     { background: url('../images/models/purple.gif') repeat-x; }
-#repeats .mask, .mask { background: url('../images/models/grey.gif')   repeat-x; }
+#repeats .cds, .mule { background: url('/images/models/orange.gif') repeat-x; }
+#repeats .mRNA, .tr     { background: url('/images/models/purple.gif') repeat-x; }
+#repeats .mask, .mask { background: url('/images/models/grey.gif')   repeat-x; }
 
 .gi { font-family:arial, verdana, helvetica; font-size:10px; top:2px; border-bottom:dotted black 1px;}
 
 /* *** */
-.red	{ background: url('../images/models/red.gif') repeat-x; }
-.green	{ background: url('../images/models/green.gif') repeat-x; }
-.orange	{ background: url('../images/models/orange.gif') repeat-x; }
-.purple	{ background: url('../images/models/purple.gif') repeat-x; }
-.AJ_above .region { background: url('../images/models/green.gif') repeat-x; }
-.AJ_below .region { background: url('../images/models/redr.gif') repeat-x; }
+.red	{ background: url('/images/models/red.gif') repeat-x; }
+.green	{ background: url('/images/models/green.gif') repeat-x; }
+.orange	{ background: url('/images/models/orange.gif') repeat-x; }
+.purple	{ background: url('/images/models/purple.gif') repeat-x; }
+.AJ_above .region { background: url('/images/models/green.gif') repeat-x; }
+.AJ_below .region { background: url('/images/models/redr.gif') repeat-x; }
 
 /*
 	Styles for the Solexa reads plugin (includes boxes of stacked reads and a histogram)
@@ -79,7 +79,7 @@
         border:solid rgb(100,60,60) 1px;
 }
 
-.read_spacer { background: url('../images/models/bar.gif') repeat-x; }
+.read_spacer { background: url('/images/models/bar.gif') repeat-x; }
 
 .multi_mapper {
 	opacity:.4;
@@ -107,23 +107,23 @@
 
 .A { 
 	background-color:rgb(140,220,140);
-	background-image:url('../images/bases/A.gif');
+	background-image:url('/images/bases/A.gif');
 }
 .T { 
 	background-color:rgb(220,140,140);
-	background-image:url('../images/bases/T.gif');
+	background-image:url('/images/bases/T.gif');
 }
 .C { 
 	background-color:rgb(140,140,220);
-	background-image:url('../images/bases/C.gif');
+	background-image:url('/images/bases/C.gif');
 }
 .G { 
 	background-color:rgb(140,140,140);
-	background-image:url('../images/bases/G.gif');
+	background-image:url('/images/bases/G.gif');
 }
 .N { 
 	background-color:rgb(255,140,0);
-	background-image:url('../images/bases/N.gif');
+	background-image:url('/images/bases/N.gif');
 }
 
 /*
@@ -133,13 +133,13 @@
 	position:relative;
 	height:16px;
 	width:80px;
-	background:url('../images/sprites_slider.png') 0px -1px;
+	background:url('/images/sprites_slider.png') 0px -1px;
 }
 .AJ_xslider_fg {
 	position:absolute;
 	top:0px;
 	left:0px;
-	background:url('../images/sprites_slider.png') 0px -18px;
+	background:url('/images/sprites_slider.png') 0px -18px;
 	cursor:pointer;
 	height:16px;
 	width:14px;
