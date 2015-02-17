@@ -1,0 +1,20 @@
+.salk_dna   { background-image:url('../images/salk/dna.png')   !important; width:37px!important; }
+.salk_mrna  { background-image:url('../images/salk/mrna.png')  !important; width:37px!important; }
+.salk_smrna { background-image:url('../images/salk/smrna.png') !important; width:37px!important; }
+.salk_meth  { background-image:url('../images/salk/meth.png')  !important; width:37px!important; }
+.salk_chip  { background-image:url('../images/salk/chip.png')  !important; width:37px!important; }
+.salk_bed   { background-image:url('../images/salk/bed.png')  !important; width:37px!important; }
+.salk_simple { background-image:url('../images/salk/simple.png')  !important; width:16px!important; }
+.salk_mysql { background-image:url('../images/salk/mysql.png')  !important; width:16px!important; }
+.salk_server { background-image:url('../images/salk/server.png')  !important; width:16px!important; }
+.salk_data { background-image:url('../images/salk/data.png')  !important; width:16px!important; }
+.salk_page { background-image:url('../images/salk/page.png')  !important; width:16px!important; }
+.salk_track { background-image:url('../images/salk/track.png')  !important; width:16px!important; }
+.salk_flag  { background-image:url('../images/salk/flag.png')  !important; width:24px!important; }
+.salk_conf  { background-image:url('../images/salk/config.png')  !important; width:24px!important; }
+
+
+.salk_star  { background-image:url('../images/salk/star.png')  !important; width:89px!important; }
+
+.transposon_fragment { background: url('../images/models/bar.gif') repeat-x;  }
+.transposable_element { background: url('../images/models/grey.gif') repeat-x; }
