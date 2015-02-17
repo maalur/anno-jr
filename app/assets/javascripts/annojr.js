@@ -14,3 +14,4 @@
 //= require ./annoj/ext-all-3.2.js
 //= require ./annoj/excanvas.js
 //= require ./annoj/annoj.js
+//
