@@ -1,5 +1,7 @@
 class TracksController < ApplicationController
 	include TracksHelper
+	require 'open-uri'
+
 	before_action :signed_in_user, except: [:index, :info, :show]
 	before_action :correct_user,   only: :destroy
 
@@ -24,7 +26,7 @@ class TracksController < ApplicationController
 	def show
 		@track = Track.find(params[:id])
 		respond_to do |format|
-			format.html { @json = get_json(@track) }
+			format.html { @info = JSON(open("#{@track.data}?action=syndicate").read) }
 			format.json { render json: annoj_data(@track.data, params) }
 		end
 	end

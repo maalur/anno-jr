@@ -1,9 +1,24 @@
-<h1><%= @browser.name %></h1>
-<h2>Created by <%= @browser.user.name %></h2>
+<div id="info">
+	<h1><%= @browser.name %></h1>
+	<h2>Added by <%= @browser.user.name %></h2>
 
-<% if @browser.linked_tracks.to_a.any? %>
-  <h3>Linked Tracks</h3>
-	<ul class="index">
-	  <%= render @browser.linked_tracks %>
-	</ul>
-<% end %>
+	<div id="left">
+		<h3>Description:</h3>
+		<%= simple_format(description) %>
+
+    <h3>Download data:</h3>
+		<%= simple_format(data_download) %>
+
+		<h3>Citation:</h3>
+		<%= simple_format(citation) %>
+	</div>
+
+	<div id="tracks right">
+	<% if @tracks.any? %>
+		<h3>Tracks:</h3>
+		<ul class="index">
+	  	<%= render @tracks %>
+		</ul>
+	<% end %>
+	</div>
+</div>

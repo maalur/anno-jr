@@ -51,6 +51,7 @@ class BrowsersController < ApplicationController
 
 	def info
 		@browser = Browser.find(params[:id])
+		@tracks  = @browser.linked_tracks.to_a
 	end
 
 	def genome
@@ -63,7 +64,7 @@ class BrowsersController < ApplicationController
 	private
 
 		def browser_params
-			params.require(:browser).permit(:name, :genome)
+			params.require(:browser).permit(:name, :genome, :description, :citation, :data_download)
 		end
 
 		def correct_user

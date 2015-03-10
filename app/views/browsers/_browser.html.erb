@@ -3,7 +3,7 @@
   	<%= browser.name %>
   </span>
   <% unless current_user?(browser.user) %>
-  	<span class="user">Created by <%= browser.user.name %></span>
+  	<span class="user">Added by <%= browser.user.name %></span>
   <% end %>
 	<span class="links">
 	  <%= link_to 'info', info_browser_path(browser) %>

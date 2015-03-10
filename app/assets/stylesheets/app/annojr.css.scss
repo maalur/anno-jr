@@ -252,3 +252,25 @@ aside {
 .feed {
   max-height: 600px;
 }
+
+/* info pages */
+
+#info {
+  .clearfix {
+    width: 100%;
+  }
+
+  #left {
+    float: left;
+    width: 50%;
+  }
+
+  #right {
+    float: right;
+    width: 50%;
+  }
+
+  p {
+    padding: 0 15px;
+  }
+}
