@@ -2,23 +2,25 @@
 	<h1><%= @browser.name %></h1>
 	<h2>Added by <%= @browser.user.name %></h2>
 
-	<div id="left">
-		<h3>Description:</h3>
-		<%= simple_format(description) %>
+  <div class="clearfix">
+		<div id="left">
+			<h3>Description:</h3>
+			<%= simple_format(description) %>
 
-    <h3>Download data:</h3>
-		<%= simple_format(data_download) %>
+	    <h3>Download data:</h3>
+			<%= simple_format(data_download) %>
 
-		<h3>Citation:</h3>
-		<%= simple_format(citation) %>
-	</div>
+			<h3>Citation:</h3>
+			<%= simple_format(citation) %>
+		</div>
 
-	<div id="tracks right">
-	<% if @tracks.any? %>
-		<h3>Tracks:</h3>
-		<ul class="index">
-	  	<%= render @tracks %>
-		</ul>
-	<% end %>
-	</div>
+		<div id="tracks right">
+		<% if @tracks.any? %>
+			<h3>Tracks:</h3>
+			<ul class="index">
+		  	<%= render @tracks %>
+			</ul>
+		<% end %>
+		</div>
+  </div>
 </div>
