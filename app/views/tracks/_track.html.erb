@@ -1,8 +1,5 @@
 <li>
   <span class="name"><%= track.name %></span>
   <span class="type"> - <%= track.path %></span>
-  <% unless current_user?(track.user) %>
-  	<span class="user"> - Added by <%= track.user.name %></span>
-  <% end %>
 	<span class="links"><%= link_to 'info', track %></span>
 </li>
