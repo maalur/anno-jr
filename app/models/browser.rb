@@ -23,30 +23,34 @@ class Browser < ActiveRecord::Base
   @@default_configs = {
   	'dna methylation' => {
   		iconCls: 'salk_meth',
-  		height: 40,
-  		scale: 1
+  		height: 50,
+      scale: 0.75
   	},
   	'annotation models' => {
   		iconCls: 'silk_bricks',
   		height: 100,
-  		scale: 1,
   		showControls: 1
   	},
   	'messenger rna' => {
   		iconCls: 'salk_mrna',
-			height: 40,
-			scale: 0.25
+			height: 50,
+      scale: 0.25
   	},
   	'homologous regions' => {
   		iconCls: 'silk_bricks',
 			height: 10,
-			single: 1,
+			single: 1
   	},
   	'reads' => {
   		iconCls: 'salk_dna',
-			height: 40,
-			scale: 1,
-  	}
+			height: 50,
+      scale: 0.25
+  	},
+    'small rna' => {
+      iconCls: 'salk_smrna',
+      height: 50,
+      scale: 0.25
+    }
   }
 
   def generate_config(tracks)
@@ -57,7 +61,7 @@ class Browser < ActiveRecord::Base
   				name: track.name,
   				type: track.track_type,
   				path: track.path,
-  				data: "/tracks/#{track.id}.json",
+  				data: "/tracks/#{track.id}.json"
   			}.merge(@@default_configs[track.path.downcase])
   		end,
   		active: tracks.map(&:id),
@@ -66,7 +70,7 @@ class Browser < ActiveRecord::Base
   		location: {
 				assembly: '1',
 				position: '650721',
-				bases: 80,
+				bases: 20,
 				pixels: 1,
 			}, #make dynamic
 			admin: {

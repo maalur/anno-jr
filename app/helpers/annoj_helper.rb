@@ -1,4 +1,5 @@
 module AnnojHelper
+	require 'open-uri'
 
 	def annoj_data(url, params)
   	annoj_params = params.select { |k,v| !['id', 'action', 'controller', 'format'].include?(k) }
